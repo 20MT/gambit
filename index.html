@@ -33,22 +33,35 @@
         }
         h1, h2, h3 { color: var(--accent-color); margin-top: 0; }
         
-        /* Calculator Styles */
-        .calc-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
-        input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid #475569;
-            background: #0f172a;
-            color: white;
-            font-size: 1.1rem;
+/* Updated Calculator Styles */
+.calc-grid {
+    display: flex;       /* Changed from grid to flex for better control */
+    gap: 20px;
+    margin-bottom: 20px;
+    justify-content: flex-start; /* Keeps boxes to the left */
+}
+
+.calc-item {
+    flex: 0 1 150px;    /* This prevents the boxes from growing too wide */
+}
+
+label { 
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+    font-size: 0.9rem;
+}
+
+input {
+    width: 100%;        /* Fills the 150px container */
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #475569;
+    background: #0f172a;
+    color: white;
+    font-size: 1.1rem;
+    box-sizing: border-box; /* Ensures padding doesn't add to width */
+}
         }
         .result-box {
             background: #334155;
